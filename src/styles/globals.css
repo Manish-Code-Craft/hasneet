@@ -1,26 +1,113 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  letter-spacing: -0.02em;
+}
+
+.text-glow {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+
+
+:root {
+   --accent: #00ffaa;
+  /* --bg: #000000; */
+  --card: #111111;
+  --border: #222222;
+}
+
+.text-accent {
+  color: var(--accent);
+}
+.border-accent {
+  border-color: var(--accent);
+}
+.bg-accent {
+  background-color: var(--accent);
+}
+
+html, body, #__next {
+  height: 100%;
+  background: var(--bg);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* left sidebar (glass look) */
+aside {
+  backdrop-filter: blur(10px);
+}
+
+/* tooltip */
+.tooltip {
+  position: absolute;
+  right: 3.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(20, 20, 20, 0.95);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
+  border: 1px solid var(--border);
+  color: #fff;
+}
+
+button.group:hover .tooltip {
+  opacity: 1;
+}
+
+/* scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 8px;
+}
+
+/* background animation placeholders (for now) */
+.bg-liquid {
+  background: radial-gradient(circle at 30% 40%, rgba(0, 255, 200, 0.12), transparent 70%),
+              radial-gradient(circle at 70% 60%, rgba(0, 120, 255, 0.15), transparent 70%),
+              radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.04), transparent 70%),
+              #000;
+  filter: saturate(140%);
+}
+
+.bg-ball {
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08), transparent 70%),
+              radial-gradient(circle at 40% 60%, rgba(255, 100, 0, 0.2), transparent 70%),
+              #000;
+}
+
+.bg-waves {
+  background: repeating-radial-gradient(circle at 50% 50%, rgba(255,255,255,0.06) 0 2px, transparent 2px 8px), #000;
+}
+
+.bg-earth {
+  background: radial-gradient(circle at 50% 50%, rgba(0,210,170,.08), transparent 60%),
+              conic-gradient(from 180deg at 50% 50%, rgba(255,255,255,.06), transparent 40%),
+              #000;
+}
+
+.bg-solid {
+  background: #000;
+}
+
+.bg-strings {
+  background-image: linear-gradient(transparent 0 98%, rgba(255,255,255,.06) 98% 100%),
+                    linear-gradient(90deg, transparent 0 98%, rgba(255,255,255,.06) 98% 100%);
+  background-size: 20px 20px;
+  background-color: #000;
 }
